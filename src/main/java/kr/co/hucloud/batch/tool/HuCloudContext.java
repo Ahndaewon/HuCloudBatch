@@ -2,7 +2,7 @@ package kr.co.hucloud.batch.tool;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HuCloudContext {
 
@@ -12,9 +12,10 @@ public class HuCloudContext {
 		
 		String rootContext = "classpath:/spring/rootContext.xml";
 		String quartz = "classpath:/spring/quartz.xml";
+		String jobContext = "classpath:/spring/jobContext.xml";
 		
 		if(ctx == null)
-			ctx = new GenericXmlApplicationContext(rootContext, quartz);
+			ctx = new ClassPathXmlApplicationContext(rootContext, quartz,jobContext);
 	}
 	
 	public static <T> T getBean(String beanName) {

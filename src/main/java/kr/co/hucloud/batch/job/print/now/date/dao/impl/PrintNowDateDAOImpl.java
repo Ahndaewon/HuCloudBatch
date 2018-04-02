@@ -1,12 +1,11 @@
 package kr.co.hucloud.batch.job.print.now.date.dao.impl;
 
 import kr.co.hucloud.batch.job.print.now.date.dao.PrintNowDateDAO;
-import kr.co.hucloud.batch.tool.UserSqlSessionDaoSupport;
 
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
-@Repository("printNowDateDAOImpl")
-public class PrintNowDateDAOImpl extends UserSqlSessionDaoSupport implements PrintNowDateDAO {
+public class PrintNowDateDAOImpl extends SqlSessionDaoSupport implements PrintNowDateDAO {
 
 	@Override
 	public String getNowDate() {
